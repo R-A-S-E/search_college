@@ -15,7 +15,8 @@ class SearchController {
 
   void getUniverrsities() async {
     states.value = StateStates.loading;
-    var data = await repository.getCollege(college, country);
+    var data = await repository.getCollege(
+        college.toLowerCase(), country.toLowerCase());
     if (data.isNotEmpty) {
       universities.addAll(data);
       states.value = StateStates.success;

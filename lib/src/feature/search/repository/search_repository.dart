@@ -9,7 +9,7 @@ class SearchRepository {
           'http://universities.hipolabs.com/search?name=$college&country=$country');
       if (response.statusCode == 200) {
         List<dynamic> data = response.data;
-        return data.map((e) => UniversityModel.fromMap(e)).toList();
+        return data.map((e) => UniversityModel.fromJson(e)).toList();
       } else {
         return [];
       }
